@@ -17,6 +17,8 @@ exports.createProduct = async (req, res) => {
                 topSelling: req.body.topSelling
             })
             const productItem = await product.save()
+
+            res.setHeader("Content-Type","application/json");
             res.json(productItem)
         }
     } catch (error) {
